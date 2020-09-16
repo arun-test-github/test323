@@ -1,0 +1,10 @@
+---
+  - name: test validate
+    gather_facts: false
+    hosts: host1
+    tasks:
+      - name: validate hey
+        url:
+          url: http://3.131.158.9:8080 
+          return_content: yes
+

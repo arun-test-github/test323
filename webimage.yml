@@ -1,0 +1,9 @@
+---
+  - name: build image
+    hosts: host1
+    gather_facts: false
+    tasks: 
+      - name: create webimage from centos
+        docker_image:
+          path: /root/docker-ansible
+          name: web_image

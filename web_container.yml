@@ -1,0 +1,15 @@
+---
+  - name: create conaitenr
+    hosts: host1
+    gather_facts: false
+    tasks:
+      - name: create conatiner
+        docker_container:
+          name: docker_host_root
+          image: web_image
+          state: started
+          ports:
+            - "8080:80"
+          tty: true
+          detach: true
+

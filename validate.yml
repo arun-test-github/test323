@@ -1,0 +1,14 @@
+---
+  - name: test validate
+    hosts: host1
+    gather_facts: false
+    tasks:
+      - name: validate hey
+        uri:
+          url: http://3.131.158.99:8080/
+          return_content: yes
+        register: this
+        failed_when: "'heyd there' not in this.content"
+      - name: message
+        debug:
+          msg: "{{ this }}"

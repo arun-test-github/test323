@@ -1,0 +1,7 @@
+---
+  - name: pull docker image from repo
+    hosts: host1
+    tasks:
+      - name: download centos image
+        docker_image:
+           name: centos
